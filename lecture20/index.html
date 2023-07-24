@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background-color: beige;
+            border: 5px solid black;
+            height: 900px;
+            margin: 2px;
+            padding: 2px;
+            display: flex;
+             flex-direction: row;   /*<--- this helps us adjust the layout of the items wrt rows or columns */
+            /* justify-content: space-evenly;   <--- this helps adjust the layout of the items */
+            justify-content: center;;
+            align-items: center;
+            align-content: center;    /*<--- This is used to adjust the space that shows us between the items when we use different
+            screen size it can be set to start, end and ceenter as well*/
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+        .item{
+            border: 2px solid brown;
+            margin: 2px;
+        }
+        #item1{
+            background-color: red;
+                height: 200px;
+                width: 200px;
+        }
+        #item2{
+            background-color: blue;
+            height: 200px;
+            width: 200px;
+        }
+        #item3{
+            background-color: green;
+            height: 200px;
+            width: 200px;
+        }
+        #item4{
+            background-color: yellow;
+                height: 200px;
+                width: 200px;
+        }
+        #img{
+            align-items: end;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" id="item1"></div>
+        <div class="item" id="item2"></div>
+        <div class="item" id="item3"></div>
+        <div class="item" id="item4"></div>
+        <img id="img1" src="Screenshot (10).png" width="400px">
+    </div>
+</body>
+</html>
