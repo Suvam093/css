@@ -4,28 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-        .container{
-            border: 5px solid black;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .parent{
             background-color: beige;
-            overflow: auto;
+            border: 5px solid black;
             height: 900px;
+            margin: 2px;
+            padding: 2px;
             display: flex;
-            justify-content:center ;
-            align-items: center;
+            /* flex-direction: column; */
             flex-wrap: wrap;
-            align-content: center;
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;   /*<--- this helps us adjust the layout of the items wrt rows or columns */
+            /* justify-content: space-evenly;   <--- this helps adjust the layout of the items */
+            /* justify-content: center; */
+            /* align-items: center; */
+                /*<--- This is used to adjust the space that shows us between the items when we use different
+            screen size it can be set to start, end and ceenter as well*/
+            flex-wrap: wrap;
         }
         .item{
             border: 2px solid brown;
-            float: left;
             margin: 2px;
         }
         #item1{
             background-color: red;
-            height: 200px;
-            width: 200px;
+                height: 200px;
+                width: 200px;
         }
         #item2{
             background-color: blue;
@@ -39,17 +53,46 @@
         }
         #item4{
             background-color: yellow;
-            height: 200px;
-            width: 200px;
+                height: 200px;
+                width: 200px;
         }
+        .tub{
+            width: 400px;
+            height: 300px;
+            flex-wrap: wrap;
+            display: flex;
+            /* justify-content: end; */
+            /* align-items: center; */
+            
+        }
+        
+        /* this is the new stuff media queries this helps in adjust the styling of an ui according to the screen size so that in different
+        size of display the interface will be displayed differently */
+
+        @media (min-width:800px) {
+            .parent{
+                background-color:aqua;
+            }
+        }
+        @media (max-width:400px) {
+            .parent{
+                background-color:thistle;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="item" id="item1">A</div>
-        <div class="item" id="item2">B</div>
-        <div class="item" id="item3">C</div>
-        <div class="item" id="item4">D</div>
+    <div class="parent">
+        <div class="container">
+            <div class="item" id="item1"></div>
+            <div class="item" id="item2"></div>
+            <div class="item" id="item3"></div>
+            <div class="item" id="item4"></div>
+        </div>
+        <div class="tub">
+            <img id="img1" src="Screenshot (10).png" width="400px">
+        </div>
     </div>
 </body>
 </html>
